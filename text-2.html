@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="#">
+        <title>test-2</title>
+        <style>
+		
+			* {
+		      margin: 0;
+		      padding: 0;
+		      box-sizing: border-box;
+		    }
+		    
+		    body {
+		      	display: flex;
+		      	justify-content: center;
+		      	align-items: center;
+		      	height: 100vh;
+		    }
+		    
+			.container1 {
+				width: 500px;
+				height: 300px;
+				border: 1px solid #222;
+			}
+		</style>
+    </head>
+    <body>
+        <div class="container1">
+
+        </div>
+
+        <div class="container">
+            <h1 id="heading">원산지 : 에티오피아</h1>
+            <img src="images/coffee-pink.jpg" alt="커피잔" id="cup" width="200" height="200"> 
+
+            <img src="images/cat.jpg" id="cat">               
+
+            <img src="images/kitty-1.png" id="kitty">
+        </div>
+
+        <script>
+            let container = document.querySelector(".container1");
+            container.onclick = (event) => {
+                alert('이벤트 발생 위치: ' + event.pageX + ', ' + event.pageY)
+            }
+
+            let heading = document.querySelector('#heading');
+            let cup = document.querySelector('#cup');
+            heading.onclick = () => heading.innerText = '추천! 오늘의 커피';
+            cup.onclick = () => cup.src = "images/coffee-blue.jpg";
+
+            let cat = document.querySelector("#cat");
+            cat.onclick  = () => alert("이미지를 클릭했습니다.");
+
+            let kitty =document.querySelector("#kitty");
+            kitty.onclick = changePic;
+
+            function changePic(){
+                kitty.src = "images/kitty-2.png"
+            }
+        </script>
+    </body>
+</html>
