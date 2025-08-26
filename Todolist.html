@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="#">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+			<label for="subjact" class="hidden">주제</label>
+			<input type="text" id="subjact" autofocus="autofocus">
+			<button>추가</button>
+		</form>
+		<hr>
+		<ul id="itemList"></ul>
+		<script type="text/javascript">
+			function newRegister() {
+				const newItem = document.createElement("li");
+				const subjact = document.querySelector("#subjact");
+                const newText = document.createTextNode(subjact.value);
+
+                newItem.appendChild(newText);
+
+                const itemList = document.querySelector("#itemList");
+                itemList.appendChild(newItem);
+
+                subjact.value="";
+			}
+            
+            document.addEventListener("DOMContentLoaded", function(){
+                const button = document.querySelector("button");
+                button.addEventListener("click", function(event){
+                    event.preventDefault();
+                    newRegister();
+                })        
+            });
+		</script>
+    </body>
+</html>
